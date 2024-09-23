@@ -2,5 +2,5 @@ namespace Pruebas_CSharp;
 
 public interface Iitem
 {
-    void apply();
+    void Apply(Character character);
 }

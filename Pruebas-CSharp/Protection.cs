@@ -1,11 +1,21 @@
 namespace Pruebas_CSharp;
 
-abstract class Protection : Iitem
+public abstract class Protection : Iitem
 {
-    private string name;
-    private int armor;
+    private string _name;
+    private int _armor;
 
-    public int getArmor(){return armor;};
+    public Protection(string name, int armor)
+    {
+        _name = name;
+        _armor = armor;
+    }
 
+    public int GetArmor(){return _armor;}
+    public string GetName(){return _name;}
 
+    public void Apply(Character character)
+    {
+        Console.WriteLine($"{character._name} equiped {_name}, adding {_armor} points of defense");
+    }
 }
