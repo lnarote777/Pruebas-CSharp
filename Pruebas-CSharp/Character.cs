@@ -20,6 +20,7 @@ public class Character
         actualHitPoints = maxHitPoints;
     }
     
+    //Devuelve el ataque total
     public int Attack()
     {
         int totalAttack = baseAttack;
@@ -34,6 +35,7 @@ public class Character
         return totalAttack;
     }
    
+    //Devuelve la defensa total
     public int Defense()
     {
 
@@ -50,6 +52,7 @@ public class Character
         return totalDefense;
     }
 
+    //Incrementa los puntos actuales del personaje sin pasarse del máximo
     public void Heal(int points)
     {
         if (points >= maxHitPoints)
@@ -64,18 +67,21 @@ public class Character
         }          
     }
 
+    //Quita puntos de vida dependiendo del daño
     public void ReceiveDamage(int damage)
     {
         actualHitPoints -= damage;
         Console.WriteLine($"{_name} received damage {damage} - Actual life points: {actualHitPoints}");
     }
 
+    //Añade un Item al inventario y muestra el mensaje de lo que se ha añadido
     public void AddItem(Iitem item)
     {
         inventory.Add(item);
         item.Apply(this);
     }
 
+    //Devuelve la informacion del personaje 
     public override string ToString()
     {
         string inventoryItems = "";
